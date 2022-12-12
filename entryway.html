@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yellow House Stories - Entryway</title>
+        <link rel="stylesheet" href="/yellowhousestories-styles.css" />
+    </head>
+    <body>
+        <!--Organize infomation-->
+        <div class="content">
+            <div class="header">
+                <!--Image-->
+                <a href="/entryway.html">
+                    <img class="h-1 logo" src="/assits/YellowHouseGameStudioLogoSmall.png" alt="YellowHouseStoriesLogo"/>
+                </a>
+                <!--Nav Area-->
+                <div class="h-2 nav">
+                    <ul>
+                        <li><a href="/entryway.html">Entryway</a></li>
+                        <li><a href="/entryway.html">Game Room</a></li>
+                        <li><a href="/entryway.html">Music Room</a></li>
+                        <li><a href="/entryway.html">Office</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-board">
+                <div class="info-1 box" id="annoucements" onload="loadAnnouncements()"></div>
+                <div class="info-2 box" id="featuring"    onload="loadFeatures()">     </div>
+                <div class="info-3 box" id="todos"        onload="loadTodos()">        </div>
+            </div>
+            <div class="footer">
+
+            </div>
+        </div>
+        <script>
+            async function loadAnnouncements() {
+                const annoucements = await fetch("/entryway-text/entryway-annoucements.txt");
+                document.getElementById(annoucements).innerHTML = annoucements;
+            }
+            async function loadFeatures() {
+                const featuring = await fetch("/entryway-text/entryway-featuring.txt");
+                document.getElementById(featuring).innerHTML = featuring;
+            }
+            async function loadTodos() {
+                const todos = await fetch("/entryway-text/entryway-todos.txt");
+                document.getElementById(todos).innerHTML = todos;
+            }
+        </script>
+    </body>
+</html>

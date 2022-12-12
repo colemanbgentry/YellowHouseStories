@@ -1,0 +1,11 @@
+/*This is to center all the content*/
+body {
+    display: flex;
+    justify-content: center;
+}
+.content {
+    display:grid;
+    grid-template-columns: repeat(6, auto);
+    gap: 10px;
+}
+
